@@ -29,12 +29,13 @@ $button: #589cda;
 $primary: #F2D31D;
 $secondary: #df8524;
 $line-up: #1b1b42;
-$footer: #5b4498;
+$footer: #63429d;
 
 body {
   background: $background url(../images/pattern-bg.png);
   background-size: 225px; // 75%, real => 300px
   color: $font-color;
+  min-width: 640px;
 }
 
 .btn {
@@ -59,6 +60,8 @@ body {
     // box-shadow: 0 5px 0 darken($button, 20%);
   }
 }
+
+.btn.active {box-shadow: inset 0 2px 2px rgba(0, 0, 0, .5);}
 
 #stage {
   background: $white url(../images/stage_save.png) no-repeat center 50px;
@@ -147,7 +150,7 @@ body {
 }
 
 #live, #vod, #line-up {
-  padding-bottom: 6em;
+  padding-bottom: 7em;
 }
 
 #vod {
@@ -163,7 +166,7 @@ body {
       top: 50px;
       left: 0;
       z-index: 200;
-      transform: scale(.6) rotate(-35deg);
+      transform: scale(.75) rotate(-35deg);
     }
     .ovni:nth-child(2) {
       top: 25px;
@@ -175,13 +178,13 @@ body {
       top: 500px;
       left: 15px;
       z-index: 0;
-      transform: scale(.7) rotate(25deg);
+      transform: scale(.9) rotate(25deg);
     }
     .ovni:nth-child(4) {
       top: 700px;
       right: -25px;
       z-index: 200;
-      transform: scale(.45) rotate(-20deg);
+      transform: scale(.65) rotate(-20deg);
     }
   }
   .border-box {
@@ -252,12 +255,33 @@ body {
     background: url(../images/hover-line-up.png) no-repeat center bottom;
   }
   .img-responsive {
+    display: block;
     margin: 0 auto;
     transition: all 0.2s ease-in-out;
     transform: rotate(1deg) scale(1);
     &:hover {
       transform: rotate(-1deg) scale(.95);
     }
+  }
+}
+
+#footer {
+  height: 100px;
+  padding-top: 30px;
+  background: $footer url(../images/footer.jpg) repeat-x top;
+  img {
+    margin: 0;
+  }
+  a {
+    opacity: .8;
+    &:hover {opacity: 1;}
+  }
+  .vtr-footer {
+    margin: 15px 0 0;
+    text-align: center;
+  }
+  .social {
+    margin: -30px 0 0;
   }
 }
 
